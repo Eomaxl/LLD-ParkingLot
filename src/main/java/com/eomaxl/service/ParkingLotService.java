@@ -1,5 +1,6 @@
 package com.eomaxl.service;
 
+import com.eomaxl.exception.ParkingLotException;
 import com.eomaxl.model.Car;
 import com.eomaxl.model.ParkingLot;
 import com.eomaxl.model.Slot;
@@ -27,7 +28,7 @@ public class ParkingLotService {
      * */
     public void createParkingLot(final ParkingLot parkingLot, final ParkingStrategy parkingStrategy){
         if (this.parkingLot != null){
-            throw new ParkingException("Parking lot already exists.");
+            throw new ParkingLotException("Parking lot already exists.");
         }
         this.parkingLot = parkingLot;
         this.parkingStrategy = parkingStrategy;

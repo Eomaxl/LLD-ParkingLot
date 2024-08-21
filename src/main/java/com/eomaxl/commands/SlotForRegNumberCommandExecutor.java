@@ -28,6 +28,11 @@ public class SlotForRegNumberCommandExecutor extends CommandExecutor {
         return command.getParams().size() == 1;
     }
 
+    @Override
+    protected String getName() {
+        return COMMAND_NAME;
+    }
+
     /**
      * {@inheritDoc}
      */

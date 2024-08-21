@@ -50,6 +50,11 @@ public class StatusCommandExecutor extends CommandExecutor {
         }
     }
 
+    @Override
+    protected String getName() {
+        return COMMAND_NAME;
+    }
+
     private static String padString(final String word, final int length) {
         String newWord = word;
         for(int count = word.length(); count < length; count++) {

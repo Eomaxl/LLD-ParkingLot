@@ -1,5 +1,13 @@
 package com.eomaxl.commands;
 
+import com.eomaxl.OutputPrinter;
+import com.eomaxl.model.Command;
+import com.eomaxl.model.Slot;
+import com.eomaxl.service.ParkingLotService;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * Executor to handle command of fetching all slot numbers in which cars of a particular color are
  * parked.
@@ -10,6 +18,11 @@ public class ColorToSlotNumberCommandExecutor extends CommandExecutor {
     public ColorToSlotNumberCommandExecutor(
             final ParkingLotService parkingLotService, final OutputPrinter outputPrinter) {
         super(parkingLotService, outputPrinter);
+    }
+
+    @Override
+    protected String getName() {
+        return COMMAND_NAME;
     }
 
     /**

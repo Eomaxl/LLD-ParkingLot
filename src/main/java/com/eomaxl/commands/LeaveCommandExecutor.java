@@ -1,5 +1,12 @@
 package com.eomaxl.commands;
 
+import com.eomaxl.OutputPrinter;
+import com.eomaxl.model.Command;
+import com.eomaxl.service.ParkingLotService;
+import com.eomaxl.validator.IntegerValidator;
+
+import java.util.List;
+
 /**
  * Executor to handle command of freeing of slot from a car.
  */
@@ -9,6 +16,11 @@ public class LeaveCommandExecutor extends CommandExecutor {
     public LeaveCommandExecutor(final ParkingLotService parkingLotService,
                                 final OutputPrinter outputPrinter) {
         super(parkingLotService, outputPrinter);
+    }
+
+    @Override
+    protected String getName() {
+        return COMMAND_NAME;
     }
 
     /**

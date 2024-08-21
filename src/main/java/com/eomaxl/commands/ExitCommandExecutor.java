@@ -1,5 +1,9 @@
 package com.eomaxl.commands;
 
+import com.eomaxl.OutputPrinter;
+import com.eomaxl.model.Command;
+import com.eomaxl.service.ParkingLotService;
+
 /**
  * Executor to handle command of exiting from the parking lot service. This is used in interactive
  * mode to exit.
@@ -18,6 +22,11 @@ public class ExitCommandExecutor extends CommandExecutor {
     @Override
     public boolean validate(final Command command) {
         return command.getParams().isEmpty();
+    }
+
+    @Override
+    protected String getName() {
+        return COMMAND_NAME;
     }
 
     /**

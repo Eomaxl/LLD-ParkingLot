@@ -1,6 +1,7 @@
 package com.eomaxl.commands;
 
 import com.eomaxl.OutputPrinter;
+import com.eomaxl.exception.NoFreeSlotAvailableException;
 import com.eomaxl.model.Car;
 import com.eomaxl.model.Command;
 import com.eomaxl.service.ParkingLotService;
@@ -14,6 +15,11 @@ public class ParkCommandExecutor extends CommandExecutor {
 
     public ParkCommandExecutor(final ParkingLotService parkingLotService, final OutputPrinter outputPrinter){
         super(parkingLotService,outputPrinter);
+    }
+
+    @Override
+    protected String getName() {
+        return COMMAND_NAME;
     }
 
     /**

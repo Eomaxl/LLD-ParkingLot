@@ -1,6 +1,7 @@
 package com.eomaxl.commands;
 
 import com.eomaxl.OutputPrinter;
+import com.eomaxl.exception.InvalidCommandException;
 import com.eomaxl.model.Command;
 import com.eomaxl.service.ParkingLotService;
 
@@ -8,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CommandExecutorFactory {
-    private Map<String, Command> commands = new HashMap<>();
+    private Map<String, CommandExecutor> commands = new HashMap<>();
 
     public CommandExecutorFactory(final ParkingLotService parkingLotService){
         final OutputPrinter outputPrinter = new OutputPrinter();

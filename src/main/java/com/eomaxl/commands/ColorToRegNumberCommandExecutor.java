@@ -19,6 +19,11 @@ public class ColorToRegNumberCommandExecutor extends CommandExecutor {
         super(parkingLotService, outputPrinter);
     }
 
+    @Override
+    protected String getName() {
+        return COMMAND_NAME;
+    }
+
     /**
      * {@inheritDoc}
      */

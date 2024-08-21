@@ -1,5 +1,9 @@
 package com.eomaxl.model;
 
+import com.eomaxl.exception.InvalidSlotException;
+import com.eomaxl.exception.ParkingLotException;
+import com.eomaxl.exception.SlotAlreadyOccupiedException;
+
 import java.util.HashMap;
 import java.util.Map;
 
