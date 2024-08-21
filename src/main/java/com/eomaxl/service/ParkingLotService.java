@@ -10,10 +10,21 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Service for enabling the functionality of a parking lot.
+ * This will have all the business logic of how the parking service will operate.
+ * */
 public class ParkingLotService {
     private ParkingLot parkingLot;
     private ParkingStrategy parkingStrategy;
 
+    /**
+     * Allocates a parking lot into a parking service. Throws {@link ParkingLotException} if there is already
+     * a parking lot alloted to the service earlier.
+     *
+     * @param parkingLot Parking lot to be allocated.
+     * @param parkingStrategy  Strategy to be used while parking.
+     * */
     public void createParkingLot(final ParkingLot parkingLot, final ParkingStrategy parkingStrategy){
         if (this.parkingLot != null){
             throw new ParkingException("Parking lot already exists.");
@@ -25,6 +36,12 @@ public class ParkingLotService {
         }
     }
 
+    /**
+     * Parks a {@link Car} into the parking lot. {@link ParkingStrategy} is used to decide the slot number adn then the car is parked into the {@link ParkingLot}
+     * into that slot number
+     * @param car  Car to be parked
+     * @return SLot number in which the car is parked.
+     * */
     public Integer park(final Car car){
         validateParkingLotExists();
         final Integer nextFreeSlot  = parkingStrategy.getNextSlot();
@@ -33,6 +50,10 @@ public class ParkingLotService {
         return nextFreeSlot;
     }
 
+    /**
+     * Unparks a car from a slot. Freed slot number is given back to the parking strategy so that it becomes available for the next parking.
+     * @param slotNumber  Slot number to be freed.
+     * */
     public void makeSlotFree(final Integer slotNumber){
         validateParkingLotExists();
         parkingLot.makeSlotFree(slotNumber);

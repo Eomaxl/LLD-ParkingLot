@@ -2,6 +2,7 @@ package com.eomaxl.commands;
 
 import com.eomaxl.OutputPrinter;
 import com.eomaxl.model.Command;
+import com.eomaxl.service.ParkingLotService;
 
 import java.util.HashMap;
 import java.util.Map;

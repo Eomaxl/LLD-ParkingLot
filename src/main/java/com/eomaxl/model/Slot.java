@@ -11,7 +11,9 @@ public class Slot {
     public boolean isSlotFree(){
         return parkedCar == null;
     }
-
+    public Car getParkedCar() {
+        return parkedCar;
+    }
     public void assignCar(Car car){ this.parkedCar = car; }
 
     public void unassignCar(){ this.parkedCar = null; }
