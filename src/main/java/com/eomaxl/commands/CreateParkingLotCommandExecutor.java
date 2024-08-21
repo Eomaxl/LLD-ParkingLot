@@ -5,6 +5,7 @@ import com.eomaxl.model.Command;
 import com.eomaxl.model.ParkingLot;
 import com.eomaxl.model.parking.strategy.NaturalOrderingParkingStrategy;
 import com.eomaxl.service.ParkingLotService;
+import com.eomaxl.validator.IntegerValidator;
 import com.sun.management.DiagnosticCommandMBean;
 
 import java.util.List;

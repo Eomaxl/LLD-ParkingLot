@@ -2,12 +2,12 @@ package com.eomaxl;
 
 public class OutputPrinter {
 
-    public void Welcome() {
-        printWithNewLine("Welcome to PFR Parking lot.");
+    public void welcome() {
+        System.out.println("Welcome to PFR Parking lot.");
     }
 
     public void end() {
-        printWithNewLine("Thanks for using PFR Parking lot");
+        printWithNewLine("Thanks for using PFR Parking lot service.");
     }
 
     public void notFound() {
@@ -15,20 +15,22 @@ public class OutputPrinter {
     }
 
     public void statusHeader() {
-        printWithNewLine("Slot No. Registration No  Color");
+        printWithNewLine("Slot No.    Registration No    Colour");
     }
 
-    public void parkingLotFull(){
+    public void parkingLotFull() {
         printWithNewLine("Sorry, parking lot is full");
     }
 
-    public void parkingLotEmpty(){
+    public void parkingLotEmpty() {
         printWithNewLine("Parking lot is empty");
     }
 
-    public void invalidFile(){
-        printWithNewLine("Invalid file");
+    public void invalidFile() {
+        System.out.println("Invalid file given.");
     }
 
-    public void printWithNewLine(final String msg){System.out.println(msg);}
+    public void printWithNewLine(final String msg) {
+        System.out.println(msg);
+    }
 }

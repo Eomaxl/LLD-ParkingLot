@@ -30,7 +30,7 @@ public abstract class CommandExecutor {
      * @param command Command to be validated.
      * @return Boolean indicating whether the command is valid or not.
      * */
-    protected abstract boolean validate(Command command);
+    public abstract boolean validate(Command command);
 
     /**
      * Execute the command.
